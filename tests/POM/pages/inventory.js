@@ -47,4 +47,12 @@ export class Inventory {
     async removeBikeLight() {
         await this.page.click(this.#buttonremoveBikeLight);
     }
+
+    async addBoltTShirt() {
+        await this.page.click(this.#buttonAddBoltTShirt);
+    }
+
+    async removeBoltTShirt() {
+        await this.page.click(this.#buttonRemoveBoltTShirt);
+    }
 }
