@@ -1,4 +1,4 @@
-const {test, expect} = require('@playwright/test')
+const {test, expect} = require('@playwright/test');
 
 export class Inventory {
 
@@ -42,17 +42,29 @@ export class Inventory {
 
     async addBikeLight() {
         await this.page.click(this.#buttonAddBikeLight);
+        return this;
     }
 
     async removeBikeLight() {
         await this.page.click(this.#buttonremoveBikeLight);
+        return this;
     }
 
     async addBoltTShirt() {
         await this.page.click(this.#buttonAddBoltTShirt);
+        return this;
     }
 
     async removeBoltTShirt() {
-        await this.page.click(this.#buttonRemoveBoltTShirt);
+        await this.page.click(this.#buttonRemoveBoltShirt);
+        return this;
+    }
+
+    async validateCartItem(num) {
+        await expect(this.page.locator(this.#numOfItemsInShoppingCart)).toHaveText(num);
+    }
+
+    async validateHiddenCartItem() {
+        await expect(this.page.locator(this.#numOfItemsInShoppingCart)).toBeHidden();
     }
 }
