@@ -12,5 +12,6 @@ test('test sauce lab', async ({ page }) => {
     await inventory.validateRemoveBackpackBtnText();
     await inventory.addBikeLight();
     await inventory.addBoltTShirt();
-    await inventory.validateCartItem('3');
+    await inventory.addTestAllTheThingsShirt();
+    await inventory.validateCartItem('4');
 });

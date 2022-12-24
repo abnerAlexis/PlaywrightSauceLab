@@ -60,11 +60,39 @@ export class Inventory {
         return this;
     }
 
+    async addFleeceJacket() {
+        await this.page.click(this.#buttonAddFleeceJacket);
+    }
+
+    async removeFleeceJacket() {
+        await this.page.click(this.#buttonRemoveFleeceJacket);
+    }
+
+    async addOnesie() {
+        await this.page.click(this.#buttonAddOnesie);
+    }
+
+    async removeOnesie() {
+        await this.page.click(this.#buttonRemoveOnesie);
+    }
+
+    async addTestAllTheThingsShirt() {
+        await this.page.click(this.#buttonAddTestAllThingsRedTShirt);
+    }
+
+    async removeTestAllTheThingsShirt() {
+        await this.page.click(this.#buttonRemoveTestAllThingsRedShirt);
+    }
+
     async validateCartItem(num) {
         await expect(this.page.locator(this.#numOfItemsInShoppingCart)).toHaveText(num);
     }
 
     async validateHiddenCartItem() {
         await expect(this.page.locator(this.#numOfItemsInShoppingCart)).toBeHidden();
+    }
+
+    async goToShoppingCart() {
+        await this.page.click(this.#shoppingCartLink);
     }
 }
