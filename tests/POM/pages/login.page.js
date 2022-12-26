@@ -17,6 +17,5 @@ export class LoginPage {
         await this.page.type(this.#usernameTextbox, username);
         await this.page.type(this.#passwordTextbox, password);
         await this.page.click(this.#loginButton);
-        return this;
     }
 }

@@ -24,4 +24,5 @@ test('test sauce lab', async ({ page }) => {
 
     await cart.removeTestAllTheThingsShirt();
     await cart.checkOut();
+    await page.pause();
 });

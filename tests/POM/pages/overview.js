@@ -1,6 +1,11 @@
 const {test, expect} = require('@playwright/test')
 
 export class Overview {
+
+    constructor(page) {
+        this.page = page;
+    }
+    
     #itemnumberlabelShoppingCart = '.shopping_cart_badge';
     #labelBackpack = '#item_4_title_link > .inventory_item_name';
     #labelBackpackQuantity = ':nth-child(3) > .cart_quantity';
@@ -12,10 +17,6 @@ export class Overview {
     #labelBikeLightQuantity = ':nth-child(5) > .cart_quantity';
     #labelPriceBikeLight = ':nth-child(5) > .cart_item_label > .item_pricebar > .inventory_item_price';
     #buttonCheckOut = '#checkout';
-
-    constructor(page) {
-        this.page = page;
-    }
 
     async validateBackpackLabel(txt) {
         await expect(this.page.locator(this.#labelBackpack)).toHaveText(txt);
