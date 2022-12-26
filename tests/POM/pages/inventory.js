@@ -23,7 +23,6 @@ export class Inventory {
 
     async validateRemoveBackpackBtnText() {
         await expect(this.page.locator(this.#buttonAddBackPack)).toHaveText('Add to cart');
-        return this;
     }
 
     async addBackPack(){
@@ -32,32 +31,26 @@ export class Inventory {
 
     async validateRemoveBackpackBtnText() {
         await expect(this.page.locator(this.#buttonRemoveBackPack)).toHaveText('Remove');
-        return this;
     }
 
     async removeBackpack() {
         await this.page.click(this.#buttonRemoveBackPack).click();
-        return this;
     }
 
     async addBikeLight() {
         await this.page.click(this.#buttonAddBikeLight);
-        return this;
     }
 
     async removeBikeLight() {
         await this.page.click(this.#buttonremoveBikeLight);
-        return this;
     }
 
     async addBoltTShirt() {
         await this.page.click(this.#buttonAddBoltTShirt);
-        return this;
     }
 
     async removeBoltTShirt() {
         await this.page.click(this.#buttonRemoveBoltShirt);
-        return this;
     }
 
     async addFleeceJacket() {
