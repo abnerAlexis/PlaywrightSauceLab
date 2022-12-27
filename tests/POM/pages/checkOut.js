@@ -10,11 +10,13 @@ export class Checkout {
     #zipcodeTextBox = '[data-test="postalCode"]';
     #buttonContinue = '[data-test="continue"]';
 
-    async enterPersonalInfo() {
-        await this.page.type
+    async enterPersonalInfo(firstname, lastname, zipcode) {
+        await this.page.type(this.#firstnameTextBox, firstname);
+        await this.page.type(this.#lastnameTextBox, lastname);
+        await this.page.type(this.#zipcodeTextBox, zipcode);
+    }
+    
+    async continueToOverview() {
+        await this.page.click(this.#buttonContinue);
     }
 }
-
-//await this.page.type(this.#usernameTextbox, username);
-// await this.page.type(this.#passwordTextbox, password);
-// await this.page.click(this.#loginButton);
